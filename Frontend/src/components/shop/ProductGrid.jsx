@@ -5,7 +5,7 @@ const ProductGrid = ({ items = [], isLoading, error, emptyMessage }) => {
     return (
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, index) => (
-          <div key={index} className="h-72 animate-pulse rounded-3xl border border-slate-200 bg-white" />
+          <div key={index} className="h-72 animate-pulse rounded-3xl border border-blue-100 bg-surface shadow-sm shadow-blue-500/5" />
         ))}
       </div>
     );
@@ -16,7 +16,7 @@ const ProductGrid = ({ items = [], isLoading, error, emptyMessage }) => {
   }
 
   if (!items.length) {
-    return <div className="rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-500">{emptyMessage}</div>;
+    return <div className="rounded-3xl border border-blue-100 bg-surface p-6 text-sm text-inkLight shadow-sm shadow-blue-500/5">{emptyMessage}</div>;
   }
 
   return (

@@ -3,12 +3,12 @@ const SectionHeader = ({ eyebrow, title, description, action }) => {
     <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
       <div className="space-y-2">
         {eyebrow && (
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
             {eyebrow}
           </p>
         )}
-        <h3 className="font-display text-2xl text-slate-900 md:text-3xl">{title}</h3>
-        {description && <p className="text-sm text-slate-500 md:text-base">{description}</p>}
+        <h3 className="font-display text-2xl text-ink md:text-3xl">{title}</h3>
+        {description && <p className="text-sm text-inkLight md:text-base">{description}</p>}
       </div>
       {action && <div>{action}</div>}
     </div>

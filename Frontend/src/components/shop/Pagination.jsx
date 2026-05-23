@@ -10,10 +10,10 @@ const Pagination = ({ page, totalPages, onPageChange }) => {
       {pages.map((current) => (
         <button
           key={current}
-          className={`h-10 w-10 rounded-full text-sm font-semibold ${
+          className={`h-10 w-10 rounded-full text-sm font-semibold transition ${
             current === page
-              ? 'bg-slate-900 text-white'
-              : 'border border-slate-200 text-slate-600 hover:border-slate-400'
+              ? 'bg-primary text-white shadow-lg shadow-blue-500/20'
+              : 'border border-blue-100 bg-surface text-inkLight hover:border-primary/40 hover:text-primary'
           }`}
           onClick={() => onPageChange(current)}
         >
