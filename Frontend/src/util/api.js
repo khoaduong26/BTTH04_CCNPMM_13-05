@@ -2,6 +2,8 @@ import axios from './axios.customize';
 
 const API_PREFIX = "/api/auth";
 
+export const verifyOtpApi = (data) => axios.post('/api/auth/verify-otp', data);
+
 const createUserApi = (data) => {
     return axios.post(`${API_PREFIX}/register`, data);
 }

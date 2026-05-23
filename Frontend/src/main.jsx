@@ -17,6 +17,9 @@ import ProductDetailPage from './pages/product-detail.jsx';
 import { AuthWrapper } from './components/context/auth.context.jsx';
 import ProtectedRoute from './components/auth/ProtectedRoute.jsx';
 
+// BƯỚC 1: Import trang VerifyOTP mà bạn đã tạo
+import VerifyOTP from './pages/verify-otp.jsx'; 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,6 +59,11 @@ const router = createBrowserRouter([
     path: "login",
     element: <LoginPage />
   },
+  // BƯỚC 2: Khai báo route cho trang OTP
+  {
+    path: "verify-otp",
+    element: <VerifyOTP />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

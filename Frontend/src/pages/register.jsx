@@ -16,22 +16,24 @@ const RegisterPage = () => {
         try {
             const res = await createUserApi({ name, email, password });
 
-            if (res?.status === 200) {
+            // Thêm check 201 vì API tạo mới dữ liệu thường trả về HTTP 201 Created
+            if (res?.status === 200 || res?.status === 201) { 
                 notification.success({
-                    message: "CREATE USER",
-                    description: res?.message ?? "Success"
+                    message: "Đăng ký thành công",
+                    description: "Vui lòng kiểm tra email để lấy mã xác thực OTP."
                 });
-                navigate("/login");
+                
+                navigate("/verify-otp", { state: { email: email } });
 
             } else {
                 notification.error({
-                    message: "CREATE USER",
-                    description: res?.message ?? "error"
+                    message: "Lỗi đăng ký",
+                    description: res?.message ?? "Email có thể đã tồn tại hoặc dữ liệu không hợp lệ"
                 })
             }
         } catch {
             notification.error({
-                message: "CREATE USER",
+                message: "Lỗi hệ thống",
                 description: "Không thể kết nối đến máy chủ"
             });
         } finally {
