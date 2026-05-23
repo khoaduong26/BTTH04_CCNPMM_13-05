@@ -13,6 +13,7 @@ const register = async (email, password, name = '') => {
         throw new Error('EMAIL_EXISTS');
     }
 
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 

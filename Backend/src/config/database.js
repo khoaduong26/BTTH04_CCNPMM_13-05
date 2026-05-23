@@ -21,7 +21,13 @@ const dbState = [
 ];
 
 const connection = async () => {
-  await mongoose.connect(process.env.MONGO_DB_URL);
+  const mongoUri = process.env.MONGO_URI || process.env.MONGO_DB_URL;
+
+  if (!mongoUri) {
+    throw new Error('Missing MongoDB connection string');
+  }
+
+  await mongoose.connect(mongoUri);
   const state = Number(mongoose.connection.readyState);
   console.log(dbState.find(f => f.value === state).label, "to database"); // connected to db
 }

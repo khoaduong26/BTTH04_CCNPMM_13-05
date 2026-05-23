@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -25,26 +28,7 @@ a {
 }
 
 .section-shell {
-    width: 100%;
-    max-width: 72rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-@media (min-width: 768px) {
-    .section-shell {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .section-shell {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+    @apply w-full max-w-6xl mx-auto px-4 md:px-6 lg:px-8;
 }
 
 .auth-page {
